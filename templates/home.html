@@ -1,14 +1,9 @@
-{% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
-  <link rel="stylesheet" href="{% static "css/style.css" %}">
-</head>
-<body>
-  This is the home page for now in project blog - post!!
-</body>
-</html>
+{% extends 'base.html' %}
+{%block content %}
+  <h3>my_model_listed</h3>
+  <ul>
+    {% for obj in object_list %}
+    <li>{{obj.title}} by {{obj.author}}</li>
+    {% endfor %}
+  </ul>
+{% endblock content %}
