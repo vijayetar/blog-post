@@ -1,9 +1,9 @@
 {% extends 'base.html' %}
 {%block content %}
-  <h3>my_model_listed</h3>
+  <h3>Blog Posts</h3>
   <ul>
     {% for obj in object_list %}
-    <li>{{obj.title}} by {{obj.author}}</li>
+    <li><a href = "{% url 'blog_details' obj.pk%}">{{obj.title}} </a> by {{obj.author}}</li>
     {% endfor %}
   </ul>
 {% endblock content %}
